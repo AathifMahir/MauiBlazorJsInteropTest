@@ -1,42 +1,28 @@
 ﻿@page "/counter"
 @inject IJSRuntime jsRuntime
 @inject HelloService helloService
-@implements IAsyncDisposable
+@inject ExampleJsInterop exampleJsInterop
 
 <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-primary" @onclick="PromptHello">Prompt Hello</button>
 <button class="btn btn-primary" @onclick="PromptHelloFromService">Prompt Hello from Service</button>
+<button class="btn btn-primary" @onclick="PromptFromClassLibrary">Prompt Hello from Library</button>
+
 
 @code {
     private int currentCount = 0;
-    private const string JAVASCRIPT_FILE = "./_content/MauiBlazorJsInteropTest/Components/Pages/Counter.razor.js";
-
-    private IJSObjectReference moduleTask = default!;
-
-    protected async override Task OnAfterRenderAsync(bool firstRender)
-    {
-        if(firstRender)
-        {
-            moduleTask = await jsRuntime.InvokeAsync<IJSObjectReference>("import", JAVASCRIPT_FILE);
-        }
-    }
-
-    public async Task PromptHello()
-    {
-        if(moduleTask is null)
-        {
-            moduleTask = await jsRuntime.InvokeAsync<IJSObjectReference>("import", JAVASCRIPT_FILE);
-        }
-        await moduleTask.InvokeVoidAsync("promptHello");
-    }
 
     public async Task PromptHelloFromService()
     {
         await helloService.PromptHello();
+    }
+
+    public async Task PromptFromClassLibrary()
+    {
+        await exampleJsInterop.Prompt("Hello from the class library!");
     }
 
 
@@ -45,11 +31,4 @@
         currentCount++;
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        if (moduleTask is not null)
-        {
-            await moduleTask.DisposeAsync();
-        }
-    }
 }
