@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiBlazorJsInteropTest.Library;
+using Microsoft.Extensions.Logging;
 
 namespace MauiBlazorJsInteropTest;
 public static class MauiProgram
@@ -21,6 +22,7 @@ public static class MauiProgram
 #endif
 
         builder.Services.AddScoped<HelloService>();
+        builder.Services.AddScoped<ExampleJsInterop>();
 
         return builder.Build();
     }

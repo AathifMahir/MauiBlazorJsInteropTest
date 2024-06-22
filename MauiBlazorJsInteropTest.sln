@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorJsInteropTest", "MauiBlazorJsInteropTest.csproj", "{04FA5FBB-71AA-404F-B7BC-670F4979142F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorJsInteropTest", "MauiBlazorJsInteropTest.csproj", "{04FA5FBB-71AA-404F-B7BC-670F4979142F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorJsInteropTest.Library", "..\MauiBlazorJsInteropTest.Library\MauiBlazorJsInteropTest.Library.csproj", "{9048F6EE-79BC-4DFA-ABFA-D4FA246403D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{04FA5FBB-71AA-404F-B7BC-670F4979142F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04FA5FBB-71AA-404F-B7BC-670F4979142F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04FA5FBB-71AA-404F-B7BC-670F4979142F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9048F6EE-79BC-4DFA-ABFA-D4FA246403D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9048F6EE-79BC-4DFA-ABFA-D4FA246403D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9048F6EE-79BC-4DFA-ABFA-D4FA246403D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9048F6EE-79BC-4DFA-ABFA-D4FA246403D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

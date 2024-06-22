@@ -65,9 +65,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Components\Pages\Counter.razor.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      <ProjectReference Include="..\MauiBlazorJsInteropTest.Library\MauiBlazorJsInteropTest.Library.csproj" />
     </ItemGroup>
 
 </Project>
