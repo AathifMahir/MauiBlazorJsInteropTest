@@ -4,7 +4,7 @@ namespace MauiBlazorJsInteropTest;
 public sealed class HelloService : IAsyncDisposable
 {
     private Lazy<Task<IJSObjectReference>> moduleTask;
-    private const string modulePath = "./_content/MauiBlazorJsInteropTest/hello.js";
+    private const string modulePath = "./hello.js";
 
     public HelloService(IJSRuntime jSRuntime)
     {
